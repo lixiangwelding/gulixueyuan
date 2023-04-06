@@ -18,6 +18,11 @@
 
     <dependencies>
 
+        <dependency>
+            <groupId>com.atguigu</groupId>
+            <artifactId>common_utils</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
 <!--        <dependency>-->
 <!--            <groupId>com.atguigu</groupId>-->
 <!--            <artifactId>service_base</artifactId>-->
@@ -61,6 +66,7 @@
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.18</version>
         </dependency>
 
         <!-- velocity 模板引擎, Mybatis Plus 代码生成器需要 -->
