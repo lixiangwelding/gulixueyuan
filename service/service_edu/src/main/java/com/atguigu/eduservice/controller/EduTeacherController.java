@@ -30,6 +30,7 @@ import java.util.Map;
 @Api(description = "讲师管理")
 @RestController
 @RequestMapping("/eduservice/teacher")
+@CrossOrigin //跨域
 public class EduTeacherController {
     @Autowired
     private EduTeacherService teacherService;
@@ -40,11 +41,11 @@ public class EduTeacherController {
     @ApiOperation(value = "所有讲师列表")
     @GetMapping("findAll")
     public R findAllTeacher(){
-        try {
-            int a = 10/0;
-        }catch(Exception e) {
-            throw new GuliException(20001,"出现自定义异常");
-        }
+//        try {
+//            int a = 10/0;
+//        }catch(Exception e) {
+//            throw new GuliException(20001,"出现自定义异常");
+//        }
         List<EduTeacher> list = teacherService.list(null);
         return R.ok().data("items",list);
     }
@@ -131,6 +132,8 @@ public class EduTeacherController {
         if(!StringUtils.isEmpty(end)){
             lambdaQueryWrapper.le(EduTeacher::getGmtCreate,end);
         }
+        //
+        lambdaQueryWrapper.orderByDesc(EduTeacher::getGmtCreate);
         teacherService.page(pageTeacher,lambdaQueryWrapper);
         long total = pageTeacher.getTotal();
         List<EduTeacher> records = pageTeacher.getRecords();
