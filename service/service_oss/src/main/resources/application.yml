@@ -1,0 +1,19 @@
+server:
+  port: 8002
+
+spring:
+  application:
+    name: service-oss
+  profiles:
+    active: dev
+
+# 阿里云 OSS
+#不同的服务器地址不同
+aliyun:
+  oss:
+    file:
+      endpoint: http://oss-cn-beijing.aliyuncs.com
+      keyid: LTAI5tPr3VwhD88p4fCfjtok
+      keysecret: QhfdBC9ysEQmgyZabulmBKeOrEJA2E
+      bucketname: edu-teacher-8848
+
