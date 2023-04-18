@@ -4,10 +4,8 @@ import com.atguigu.commonutils.R;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/vue-admin-template/eduserviece/user")
-@CrossOrigin(methods = {
-        RequestMethod.DELETE,RequestMethod.GET,RequestMethod.POST,RequestMethod.PUT
-})
+@RequestMapping("/vue-admin-template/eduservice/user")
+@CrossOrigin
 public class EduLoginController {
     @PostMapping("login")
     public R login(){
